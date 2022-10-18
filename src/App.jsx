@@ -1,10 +1,9 @@
-import { Wrapper } from './components/wrapper'
+import { Home } from './pages/Home'
+
 function App() {
 
   return (
-    <>
-      <Wrapper />
-    </>
+    <Home />
   )
 }
 
