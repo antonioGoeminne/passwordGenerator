@@ -1,22 +1,24 @@
 import { Box, Checkbox } from '@chakra-ui/react'
 
-export const Checkboxs = () => {
+export const Checkboxs = ({ handleChange }) => {
 
     const OPTIONS = [
-        { text: 'Include Uppercase Letters' },
-        { text: 'Include Lowecase Letters' },
-        { text: 'Include Numbers' },
-        { text: 'Include Symbols' }
+        { text: 'Include Uppercase Letters', check: 'includeCapitals' },
+        { text: 'Include Numbers', check: 'includeNumbers' },
+        { text: 'Include Symbols', check: 'includeSymbols' }
     ]
 
     return (
         <Box mt={2} display='flex' flexDirection='column'>
-            {OPTIONS.map((opt) =>
+            {OPTIONS.map(({ text, check }, index) =>
                 <Checkbox
+                    name={text}
+                    onChange={(e) => handleChange(e, check)}
+                    key={index}
                     colorScheme='yellow'
                     mb={2}
                     mt={1}
-                    defaultChecked>{opt.text}
+                >{text}
                 </Checkbox>
             )}
         </Box>

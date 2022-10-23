@@ -13,7 +13,7 @@ export default extendTheme({
         },
     },
     colors: {
-        error: 'red.300',
+        error: 'red.500',
         success: 'green.300',
         primary: {
             ...theme.black,
